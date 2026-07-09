@@ -1,0 +1,16 @@
+create table student(
+  name varchar(30),
+  age number
+);
+insert into student
+values('Baskaran',21);
+DECLARE
+  Name varchar(30);
+  Age number;
+BEGIN 
+     select name,age into Name,Age
+     from student;
+     dbms_output.put_line('Name : '||Name);
+     dbms_output.put_line('Age  : '||Age);
+END;
+/
