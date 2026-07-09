@@ -1,0 +1,24 @@
+declare
+      a number := 10;
+      b number := 90;
+      c number := 30;
+begin
+     if a>b then
+       if a>c then
+        dbms_output.put_line(a);
+        return;
+       else 
+        dbms_output.put_line(c);
+        return;
+       end if;
+    else
+      if b>c then
+        dbms_output.put_line(b);
+        return;
+      else 
+        dbms_output.put_line(c);
+        return;
+      end if;
+    end if;
+    end;
+    /
