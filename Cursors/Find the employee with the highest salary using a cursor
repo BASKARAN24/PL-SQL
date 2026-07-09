@@ -1,0 +1,21 @@
+create table employee(
+  id number,
+  name varchar(30),
+  salary varchar(30)
+);
+insert into employee(id,name,salary)
+values(1,'Blesson',70000),
+      (2,'Baskaran',60000),
+      (3,'Sam Christopher',40000);
+declare 
+      cursor max_salary is 
+          select name from employee
+          where salary = (select max(salary) from employee);
+          v_name employee.name%type;
+begin
+      open max_salary;
+          fetch max_salary into v_name;
+          dbms_output.put_line(v_name);
+      close max_salary;
+end;
+/
