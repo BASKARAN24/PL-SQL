@@ -1,0 +1,15 @@
+declare 
+    function oddevenchecker(n number)
+    return varchar
+    is
+    begin 
+    if mod(n,2) = 0 then
+        return 'even';
+    else 
+      return 'odd';
+    end if;
+  end oddevenchecker;
+begin
+  dbms_output.put_line(oddevenchecker(2));
+end;
+/
