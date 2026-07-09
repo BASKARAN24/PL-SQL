@@ -1,0 +1,15 @@
+declare
+     a number := 10;
+     b number;
+begin
+   for i in reverse 0..5 loop
+     b := a / i;
+     dbms_output.put_line(b);
+   end loop;
+exception 
+  when zero_divide then
+    dbms_output.put_line('Cannot divide by zero');
+  when others then
+    dbms_output.put_line('Unexpected error Occurred');
+  end;
+  /
