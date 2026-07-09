@@ -1,0 +1,16 @@
+
+declare 
+    n number := 5;
+    a number;
+    function square(n1 number)
+    return number
+     is
+    begin
+    return n1 * n1;
+end square;
+begin
+    a := square(n);
+    dbms_output.put_line(a);
+    
+end;
+/
