@@ -1,0 +1,10 @@
+declare 
+    a number := 10;
+    sum number := 0;
+begin 
+    for i in 1..a loop
+      sum := sum + i;
+    end loop;
+    dbms_output.put_line(sum);
+  end;
+  /
