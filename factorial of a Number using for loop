@@ -1,0 +1,10 @@
+declare
+    a number := 5;
+    ans number := 1;
+begin
+    for i in 1..a loop
+      ans := ans * i;
+    end loop;
+    dbms_output.put_line(ans);
+  end;
+  /
