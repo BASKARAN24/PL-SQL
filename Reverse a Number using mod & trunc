@@ -1,0 +1,14 @@
+declare 
+    a number := 12345;
+    b number := 0;
+    rem number ;
+begin
+    while a>0 loop
+       rem := mod(a,10);
+       b := b * 10;
+       b := b + rem;
+       a := trunc(a / 10);
+    end loop;
+    dbms_output.put_line(b);
+  end;
+  /
