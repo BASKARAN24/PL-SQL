@@ -1,0 +1,25 @@
+create table employee(
+  id number,
+  name varchar(30),
+  dept varchar(30)
+);
+insert into employee(id,name,dept)
+values
+        (1,'Blesson','CSE'),
+        (2,'Baskaran','CSE'),
+        (3,'Sam Christoper','MECH');
+declare
+      cursor emp_dept_wise is 
+          select * from employee 
+          order by dept;
+      v_emp_record employee%rowtype;
+begin
+    open emp_dept_wise;
+      loop
+        fetch emp_dept_wise into v_emp_record;
+        exit when emp_dept_wise%notfound;
+      dbms_output.put_line(v_emp_record.id||' '||v_emp_record.name||' '||v_emp_record.dept);
+      end loop;
+    close emp_dept_wise;
+end;
+/
