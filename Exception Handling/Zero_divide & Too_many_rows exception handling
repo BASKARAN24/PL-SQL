@@ -1,0 +1,26 @@
+create table employee (
+  id number,
+  name varchar(30)
+);
+insert into employee(id,name)
+values
+  (1,'Blesson'),
+  (2,'Baskaran'),
+  (3,'Blesson');
+
+declare 
+   Id employee.id%type;
+   Name employee.name%type;
+begin
+   select id,name into Id,Name
+   from employee
+   where name = 'Blesson';
+exception
+   when too_many_rows then
+    dbms_output.put_line('Too many rows found for one value');
+   when no_data_found then
+    dbms_output.put_line('Fetch some data to retrieve');
+   when others then
+    dbms_output.put_line('Unexpected error ');
+end;
+/
