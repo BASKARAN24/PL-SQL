@@ -1,0 +1,19 @@
+declare 
+    a number := 121;
+    b number := 0;
+    c number := a;
+    rem number ;
+begin
+    while a>0 loop
+       rem := mod(a,10);
+       b := b * 10;
+       b := b + rem;
+       a := trunc(a / 10);
+    end loop;
+    if c = b then
+      dbms_output.put_line('Palindrome');
+    else
+      dbms_output.put_line('Not a Palindrome');
+    end if;
+  end;
+  /
