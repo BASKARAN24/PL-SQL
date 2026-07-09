@@ -1,0 +1,21 @@
+create table employee(
+  id number,
+  name varchar(30),
+  salary varchar(30)
+);
+insert into employee(id,name,salary)
+values(1,'Blesson',60000),
+      (2,'Baskaran',60000),
+      (3,'Sam Christopher',40000);
+declare
+   cursor count_emp is 
+       select count(id) as c from employee;
+
+       countt employee.id%type;
+begin
+  open count_emp;
+       fetch count_emp into countt;
+       dbms_output.put_line(countt);
+  close count_emp;
+end;
+/
