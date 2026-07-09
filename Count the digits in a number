@@ -1,0 +1,13 @@
+declare 
+    a number := 121;
+    countt number := 0;
+    rem number ;
+begin
+    while a>0 loop
+       countt := countt + 1;
+       rem := mod(a,10);
+       a := trunc(a / 10);
+    end loop;
+    dbms_output.put_line(countt);
+  end;
+  /
