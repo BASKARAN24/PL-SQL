@@ -1,0 +1,25 @@
+create table employee (
+  id number,
+  name varchar(30),
+  salary number,
+  department varchar(30)
+);
+insert into employee(id,name,salary,department)
+values(1,'Blesson',50000,'Developer'),
+      (2,'Baskaran',50000,'Developer'),
+      (3,'Sam Christoper',20000,'Tester');
+declare
+   cursor disp_name is 
+       select name from employee;
+
+       a employee.name%type;
+begin
+  open disp_name;
+    loop
+       fetch disp_name into a ;
+       exit when disp_name%notfound;
+       dbms_output.put_line(a);
+    end loop;
+    close disp_name;
+  end;
+  /
