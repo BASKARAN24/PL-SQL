@@ -1,0 +1,26 @@
+create table employee (
+  id number,
+  name varchar(30),
+  salary number,
+  department varchar(30)
+);
+insert into employee(id,name,salary,department)
+values(1,'Blesson',50000,'Developer'),
+      (2,'Baskaran',50000,'Developer'),
+      (3,'Sam Christoper',20000,'Tester');
+declare 
+    cursor sal_morethan_20k is 
+      select name from employee
+      where salary > 20000;
+
+      Name employee.name%type;
+begin
+  open sal_morethan_20k;
+      loop 
+        fetch sal_morethan_20k into Name;
+        exit when sal_morethan_20k%notfound;
+        dbms_output.put_line(Name);
+      end loop;
+      close sal_morethan_20k;
+    end;
+    /
